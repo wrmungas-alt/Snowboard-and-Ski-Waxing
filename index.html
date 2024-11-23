@@ -5,89 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heatgun Wax Method</title>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column; /* Stack content on smaller screens */
-        background-color: #f9f9f9;
-        color: #333;
-    }
-
-    #toc {
-        width: 250px;
-        padding: 20px;
-        background-color: #ffffff;
-        position: sticky; /* Sticky instead of fixed for better mobile UX */
-        top: 0;
-        height: 100%;
-        overflow-y: auto;
-        flex-shrink: 0; /* Ensures TOC shrinks on smaller screens */
-    }
-
-    @media (max-width: 768px) {
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f9f9f9;
+            color: #333;
+        }
         #toc {
-            width: 100%; /* Full-width TOC for smaller screens */
-            position: relative; /* Ensure TOC flows with content */
+            width: 250px;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
         }
-    }
-
-    #content {
-        margin: 0 auto;
-        padding: 20px;
-        max-width: 800px;
-        flex: 1;
-    }
-
-    h1, h2, h3 {
-        color: #03989e;
-    }
-
-    .image-container {
-        display: flex;
-        flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        gap: 10px; /* Consistent spacing */
-        justify-content: center; /* Center content on smaller screens */
-    }
-
-    .image-container figure {
-        flex: 1 1 calc(50% - 10px); /* Two images per row with gap */
-        text-align: center;
-    }
-
-    @media (max-width: 768px) {
-        .image-container figure {
-            flex: 1 1 100%; /* One image per row on small screens */
+        #toc h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
-    }
-
-    .image-container img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .row {
-        display: flex;
-        flex-wrap: wrap; /* Adjust rows on smaller screens */
-    }
-
-    .column {
-        flex: 1 1 calc(50% - 20px); /* Two columns with spacing */
-        margin: 10px;
-    }
-
-    @media (max-width: 768px) {
+        #toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        #toc ul li {
+            margin: 5px 0;
+        }
+        #toc ul li a {
+            color: #002a25;
+            text-decoration: none;
+        }
+        #toc ul li a:hover {
+            text-decoration: underline;
+        }
+        #content {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+            flex: 1;
+        }
+        h1 {
+            color: #002a25;
+            text-align: center;
+        }
+        h2 {
+            color: #03989e;
+        }
+        h3 {
+            margin-left: 20px;
+            color: #3f5c5e;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .row {
+            display: flex;
+        }
         .column {
-            flex: 1 1 100%; /* Full-width columns on small screens */
+            flex: 50%;
         }
-    }
-</style>
-
+        .note {
+            font-style: italic;
+            color: #777;
+        }
+        .important {
+            font-weight: bold;
+            color: #b30000;
+        }
+        div.container {
+          display:inline-block;
+        }
+         .image-container {
+            display: flex;
+            justify-content: space-between; /* Adjust spacing between images */
+            gap: 10px; /* Adds space between images */
+        }
+        .image-container figure {
+            text-align: center; /* Centers captions below the images */
+            flex: 1; /* Makes all figures take equal space */
+        }
+        .image-container img {
+            max-width: 100%; /* Ensures images are responsive */
+            height: auto;
+            border: 1px solid #ccc; /* Optional: adds a border around images */
+        }
+        .image-container figcaption {
+            margin-top: 5px; /* Adds space between the image and the caption */
+            font-size: 0.9em; /* Slightly smaller text for the caption */
+            color: #555; /* Optional: lighter text color for captions */
+        }
+    </style>
 </head>
 <body>
     <nav id="toc">
