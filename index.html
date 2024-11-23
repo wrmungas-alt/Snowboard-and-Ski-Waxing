@@ -16,19 +16,41 @@
             color: #333;
         }
         #toc {
-            width: 200px;
+            width: 250px;
             padding: 20px;
             background-color: #ffffff;
-            color: #fff;
-            position: sticky;
+            position: fixed;
             height: 100%;
             overflow-y: auto;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease; /* Smooth transition */
+            z-index: 10;
         }
-        @media (max-width: 768px) {
-            #toc {
-                width: 100%; /* Full-width TOC for smaller screens */
-                position: relative; /* Ensure TOC flows with content */
+        
+        #content {
+            margin-left: 270px; /* Space for the TOC */
+            padding: 20px;
+            max-width: 800px;
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) { /* For narrower screens */
+            body {
+                flex-direction: column; /* Stack TOC on top */
             }
+
+        #toc {
+            width: 100%;
+            height: auto; /* Allow height to adjust to content */
+            position: static; /* Normal flow positioning */
+            overflow-y: visible; /* Remove scrolling */
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc; /* Optional: visual separator */
+        }
+    
+        #content {
+            margin-left: 0; /* Reset margin for content */
         }
         #toc h2 {
             font-size: 1.2em;
