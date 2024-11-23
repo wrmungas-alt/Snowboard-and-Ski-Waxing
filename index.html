@@ -114,19 +114,27 @@
         div.container {
           display:inline-block;
         }
-         .image-container {
+        .image-container {
             display: flex;
-            justify-content: space-between; /* Adjust spacing between images */
-            gap: 10px; /* Adds space between images */
+            flex-wrap: wrap; /* Allows images to stack when space runs out */
+            justify-content: space-between; /* Distribute images evenly */
+            gap: 16px; /* Optional: Adds spacing between images */
+        }
+        
+        .image-container img {
+            max-width: 100%; /* Prevents overflow */
+            height: auto; /* Maintains 16:9 aspect ratio */
+            flex: 1 1 calc(50% - 16px); /* Each image takes half the width, minus the gap */
+        }
+        
+        @media (max-width: 768px) {
+            .image-container img {
+                flex: 1 1 100%; /* On smaller screens, images stack vertically */
+            }
         }
         .image-container figure {
             text-align: center; /* Centers captions below the images */
             flex: 1; /* Makes all figures take equal space */
-        }
-        .image-container img {
-            max-width: 100%; /* Ensures images are responsive */
-            height: auto;
-            border: 1px solid #ccc; /* Optional: adds a border around images */
         }
         .image-container figcaption {
             margin-top: 5px; /* Adds space between the image and the caption */
